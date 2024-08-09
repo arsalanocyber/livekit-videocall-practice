@@ -51,6 +51,8 @@ const TestCall: React.FC = () => {
           },
         });
 
+        newRoom.prepareConnection(url, response.data.token);
+
         newRoom
           .on(RoomEvent.TrackSubscribed, handleTrackSubscribed)
           .on(RoomEvent.TrackUnsubscribed, handleTrackUnsubscribed)

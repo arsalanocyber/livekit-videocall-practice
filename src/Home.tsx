@@ -1,5 +1,13 @@
 // src/pages/HomePage.tsx
-import { Box, Button, Input, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Divider,
+  Input,
+  Stack,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -37,6 +45,26 @@ const HomePage = () => {
         <Button colorScheme="teal" onClick={handleJoinRoom}>
           Join Room
         </Button>
+        <Divider />
+        <Text textAlign={"center"} color={"gray.500"}>
+          OR
+        </Text>
+        <Divider />
+        <VStack>
+          <Input
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <Button
+            colorScheme="red"
+            onClick={() => {
+              navigate(`/groupcall-prep/${username}`);
+            }}
+          >
+            Create Video Call
+          </Button>
+        </VStack>
       </Stack>
     </Box>
   );
