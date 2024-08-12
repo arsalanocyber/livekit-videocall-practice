@@ -38,7 +38,7 @@ const GroupCallPrep = () => {
 
   const handleJoinRoom = () => {
     if (roomId) {
-      navigate(`/groupcall/${roomId}`);
+      navigate(`/groupcall/${roomId}/${username}`);
     }
   };
 
@@ -52,6 +52,7 @@ const GroupCallPrep = () => {
         }
       );
       setToken(response.data.token);
+      localStorage.setItem("livekitToken", response.data.token);
       try {
         const newRoom = new Room({
           adaptiveStream: true,

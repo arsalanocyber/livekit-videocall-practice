@@ -15,7 +15,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/room" element={<RoomPage />} />
           <Route path="/groupcall-prep/:username" element={<GroupCallPrep />} />
-          <Route path="/groupcall/:roomId" element={<GroupCall />} />
+          <Route path="/groupcall/:roomId/:username" element={<GroupCall />} />
           <Route path="/test" element={<Test />} />
         </Routes>
       </Router>
